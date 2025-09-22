@@ -75,7 +75,7 @@ class Distance:
         else:
             return NotImplemented
 
-    def __gt__(self, other: Union["Distance", int, float]) -> bool:
+    def __ge__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, (int, float)):
             return self.km >= other
         elif isinstance(other, Distance):
