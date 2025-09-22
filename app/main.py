@@ -38,9 +38,9 @@ class Distance:
         if isinstance(other, (int, float)):
             if other == 0:
                 raise ZeroDivisionError("division by zero")
-            else:
-                distance = Distance(round(self.km / other, 2))
-                return distance
+
+            distance = Distance(round(self.km / other, 2))
+            return distance
         return NotImplemented
 
     def __lt__(self, other: Union[Distance , int , float]) -> bool:
