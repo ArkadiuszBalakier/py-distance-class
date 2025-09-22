@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import Union
 
+
 class Distance:
     def __init__(self, km : int) -> None:
         self.km = km
@@ -26,7 +27,6 @@ class Distance:
             self.km += other
             return self
         return NotImplemented
-
 
     def __mul__(self, other: int | float) -> Distance:
         if isinstance(other, (int, float)):
