@@ -43,17 +43,42 @@ class Distance:
                 return distance
         return NotImplemented
 
-    def __lt__(self, other: "Distance") -> bool:
-        return self.km < other.km
+    def __lt__(self, other: Union["Distance" , int , float]) -> bool:
+        if isinstance(other, (int, float)):
+            return self.km < other
+        elif isinstance(other, Distance):
+            return self.km < other.km
+        else:
+            return NotImplemented
 
-    def __gt__(self, other: "Distance") -> bool:
-        return self.km > other.km
+    def __gt__(self, other: Union["Distance", int, float]) -> bool:
+        if isinstance(other, (int, float)):
+            return self.km > other
+        elif isinstance(other, Distance):
+            return self.km > other.km
+        else:
+            return NotImplemented
 
-    def __eq__(self, other: "Distance") -> bool:
-        return self.km == other.km
+    def __eq__(self, other: Union["Distance", int, float]) -> bool:
+        if isinstance(other, (int, float)):
+            return self.km == other
+        elif isinstance(other, Distance):
+            return self.km == other.km
+        else:
+            return NotImplemented
 
-    def __le__(self, other: "Distance") -> bool:
-        return self.km <= other.km
+    def __le__(self, other: Union["Distance", int, float]) -> bool:
+        if isinstance(other, (int, float)):
+            return self.km <= other
+        elif isinstance(other, Distance):
+            return self.km <= other.km
+        else:
+            return NotImplemented
 
-    def __ge__(self, other: "Distance") -> bool:
-        return self.km >= other.km
+    def __gt__(self, other: Union["Distance", int, float]) -> bool:
+        if isinstance(other, (int, float)):
+            return self.km >= other
+        elif isinstance(other, Distance):
+            return self.km >= other.km
+        else:
+            return NotImplemented
